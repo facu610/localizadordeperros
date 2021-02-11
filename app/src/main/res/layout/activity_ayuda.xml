@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".AyudaActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_act_ayuda"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:titleTextColor="@color/secondaryTextColor" />
+
+    <Button
+        android:id="@+id/b_Ayuda_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_border"
+        android:gravity="left|center_vertical"
+        android:text=" ¿Problemas de Sincronización?"
+        android:textAllCaps="false"
+        android:textColor="@color/primaryColor"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_act_ayuda" />
+
+    <TextView
+        android:id="@+id/tv_Ayuda_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="- Recuerde que para realizar la sincronización debe estar conectado mediante una conexión WIFI a la red de Coprotab. La sincronización no se realizará si el dispositivo está conectado a una red distinta de la de Ccoprotab."
+        android:textColor="@color/primaryTextColor"
+        android:textSize="19dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_Ayuda_1" />
+
+    <Button
+        android:id="@+id/b_Ayuda_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_border"
+        android:gravity="left|center_vertical"
+        android:text=" ¿No se encuentra registrado como Instrucrtor?"
+        android:textAllCaps="false"
+        android:textColor="@color/primaryColor"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ayuda_1" />
+    <TextView
+        android:id="@+id/tv_Ayuda_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="19dp"
+        android:visibility="gone"
+        android:layout_marginEnd="8dp"
+        android:text="- Asegúrese de que los datos complementarios estén sincronizados. En caso contrario, solicite que sea deado de alta como Instructor."
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_Ayuda_2" />
+
+    <Button
+        android:id="@+id/b_Ayuda_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_border"
+        android:gravity="left|center_vertical"
+        android:text=" ¿Faltan datos al cargar pestañas o listas?"
+        android:textAllCaps="false"
+        android:textColor="@color/primaryColor"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ayuda_2" />
+
+    <TextView
+        android:id="@+id/tv_Ayuda_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="- Si experimenta carga de listas vacías en diversas pantallas el problema puede deberse a que los datos complementarios no están sincronizados, por favor sincronícelos desde la pantalla de sincronización."
+        android:textColor="@color/primaryTextColor"
+        android:textSize="19dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_Ayuda_3" />
+
+    <Button
+        android:id="@+id/b_Ayuda_4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_border"
+        android:gravity="left|center_vertical"
+        android:text=" ¿La aplicación no muestra los socios?"
+        android:textAllCaps="false"
+        android:textColor="@color/primaryColor"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ayuda_3" />
+
+    <TextView
+        android:id="@+id/tv_Ayuda_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="- Ingrese a la pestaña sincronización y presione el botón socios, espere a que el proceso termine y revise si ahora los socios se muestran correctamente."
+        android:textColor="@color/primaryTextColor"
+        android:textSize="19dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_Ayuda_4" />
+
+    <Button
+        android:id="@+id/b_Ayuda_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_border"
+        android:gravity="left|center_vertical"
+        android:text=" Creo que los datos no están actualizados."
+        android:textAllCaps="false"
+        android:textColor="@color/primaryColor"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ayuda_4" />
+
+    <TextView
+        android:id="@+id/tv_Ayuda_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="- Puede que los datos con el tiempo hayan cambiado y el dispositivo no esté actualizado, diríjase a la pantalla de sincronizacíon y asegúrese de sincronizar tanto socios como complementarios."
+        android:textColor="@color/primaryTextColor"
+        android:textSize="19dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_Ayuda_5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

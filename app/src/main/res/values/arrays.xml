@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categoriasDTR">
+        <item>Sin Riesgo</item>
+        <item>Bajo Riesgo</item>
+        <item>Medio Riesgo</item>
+        <item>Alto Riesgo</item>
+    </string-array>
+
+    <string-array name="unidades">
+        <item>%</item>
+        <item>ppm.</item>
+    </string-array>
+    <string-array name="unidades_af">
+        <item>grs.</item>
+        <item>cm3.</item>
+    </string-array>
+
+    <string-array name="densidad">
+        <item>Ralo</item>
+        <item>Normal</item>
+        <item>Denso</item>
+    </string-array>
+    <string-array name="etapascultivo">
+        <item>Producción de Plantines</item>
+        <item>Seguimiento de Cultivo</item>
+        <item>Cosecha y Curado</item>
+    </string-array>
+</resources>
