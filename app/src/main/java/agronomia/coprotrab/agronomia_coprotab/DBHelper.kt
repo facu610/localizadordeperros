@@ -64,6 +64,12 @@ class DBHelper (ctx: Context) : ManagedSQLiteOpenHelper(ctx, "RegistroAgrotecnic
             "Etapa" to TEXT,
             "Finca" to TEXT,
             "Localidad" to TEXT)
+
+        db.createTable( "Ubicacion_APITable", true,
+            "Id" to TEXT,
+        "Latitud" to TEXT,
+        "Longitud" to TEXT,
+        "FechaHora" to TEXT)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -87,6 +93,7 @@ class DBHelper (ctx: Context) : ManagedSQLiteOpenHelper(ctx, "RegistroAgrotecnic
         db.dropTable("SocioxUp")
         db.dropTable("AA_Instructores")
         db.dropTable("AA_Registro_Visita")
+        db.dropTable("Ubicacion_APITable")
         onCreate(db)
     }
 }

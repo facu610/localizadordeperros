@@ -77,6 +77,39 @@ class DataAccess_RegistroAgrotecnico_App(val context: Context) {
     fun delete_Instructores() = context.database.use {
         delete("AA_Instructores")
     }
+    fun delete_Ubicaciones_APIs() = context.database.use {
+        delete("Ubicacion_APITable")
+    }
+    fun select_Ubicaciones_API(): ArrayList<Ubicacion_API> = context.database.use {
+
+        val lista_ubicacion_api = ArrayList<Ubicacion_API>()
+
+        select("Ubicacion_APITable")
+            .parseList(object : MapRowParser<List<Ubicacion_API>>{
+                override fun parseRow(columns: Map<String, Any?>): List<Ubicacion_API> {
+                    val Id = columns.getValue("Id")
+                    val Latitud = columns.getValue("Latitud")
+                    val Longitud = columns.getValue("Longitud")
+                    val FechaHora = columns.getValue("FechaHora")
+
+
+                    val ubicacion_api = Ubicacion_API(Id.toString(),
+                        Latitud.toString(),
+                        Longitud.toString(),
+                        FechaHora.toString()
+                    )
+                    lista_ubicacion_api.add(ubicacion_api)
+                    return lista_ubicacion_api
+                }
+            })
+
+        lista_ubicacion_api
+    }
+
+
+
+
+
     fun delete_AllSocioxUP() = context.database.use {
         delete("SocioxUP")
     }

@@ -16,11 +16,16 @@ import java.net.URL
 
 class Google_Maps_API : AppCompatActivity(), OnMapReadyCallback {
 
+    var lista_ubicacionapi:ArrayList<Ubicacion_API>? = null
+
     private lateinit var map:GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_google__maps__a_p_i)
         createFragment()
+
+
+
     }
 
     private fun createFragment() {
@@ -38,7 +43,14 @@ class Google_Maps_API : AppCompatActivity(), OnMapReadyCallback {
     private fun createMarker() {
 
 
-        val favoritePlace = LatLng(-24.7823709,-65.4309822)
+
+        lista_ubicacionapi = DataAccess_RegistroAgrotecnico_App(this).select_Ubicaciones_API()
+
+        var lat:Double = lista_ubicacionapi!![1].Latitud.toDouble()
+        var long:Double = lista_ubicacionapi!![1].Longitud.toDouble()
+
+
+        val favoritePlace = LatLng(lat,long)
         map.addMarker(MarkerOptions().position(favoritePlace).title("que perron negro!!"))
         map.animateCamera(
             CameraUpdateFactory.newLatLngZoom(favoritePlace, 18f),

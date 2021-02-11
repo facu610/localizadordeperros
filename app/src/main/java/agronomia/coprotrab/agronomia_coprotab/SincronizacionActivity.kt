@@ -23,6 +23,7 @@ import java.util.*
 import com.github.kittinunf.fuel.android.extension.responseJson
 import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.httpPost
+import org.jetbrains.anko.db.TEXT
 import org.jetbrains.anko.db.delete
 
 class SincronizacionActivity : AppCompatActivity() {
@@ -97,20 +98,26 @@ class SincronizacionActivity : AppCompatActivity() {
                 val respuesta = URL("http://198.199.89.202:8080/pets-api/api/ubicacion/hoy").readText()
                 val gson = Gson()
                 val ubicaciones = gson.fromJson(respuesta, Array<Ubicacion_API>::class.java)
-
-
-                dialog.dismiss()
-                //uiThread { longToast("Instructores Sincronizados")
-                uiThread { longToast(ubicaciones[0].Latitud.toString())
-                    uiThread { longToast(ubicaciones[0].Longitud.toString())
-
-
+                DataAccess_RegistroAgrotecnico_App(applicationContext).delete_AllSocioxUP()
+                database.use {
+                    ubicaciones.forEach {
+                        insert(
+                            "Ubicacion_APITable",
+                            "Id" to it.Id,
+                            "Latitud" to it.Latitud,
+                            "Longitud" to it.Longitud,
+                            "FechaHora" to it.FechaHora
+                        )
                     }
+                }
+                dialog.dismiss()
+                uiThread { longToast("Ubicaciones de mascotas sincronizadas") }
+//                uiThread { longToast(ubicaciones[0].Latitud.toString())
+//                    uiThread { longToast(ubicaciones[0].Longitud.toString())
             }
 
-        }
-        }
 
+        }
 
         bSincroSoc.setOnClickListener {
             val dialog =
