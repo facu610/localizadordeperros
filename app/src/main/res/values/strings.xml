@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Agronomia Coprotab</string>
+    <string name="app_name">Localizador de Mascotas</string>
     <string name="muestrainstructor">Instructor:</string>
     <string name="muestrazona">Zona:</string>
     <string name="lbl_cod_soc">Código Socio.:</string>

@@ -14,8 +14,8 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@drawable/logoiconoapp180"
-            android:label="@string/app_name"
+            android:icon="@drawable/logoapp"
+            android:label="Localizador de Mascotas"
             android:networkSecurityConfig="@xml/network_security_config"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
@@ -28,6 +28,7 @@
 
 
         <!--
+
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
         -->
@@ -36,11 +37,9 @@
                 android:name="com.google.android.geo.API_KEY"
                 android:value="@string/google_maps_key" />
 
-        <activity android:name=".RegistrarVisitaActivity" />
-        <activity android:name=".SociosActivity" />
+
         <activity android:name=".SincronizacionActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".DetalleSocioActivity" />
         <activity android:name=".Google_Maps_API" />
         <activity android:name=".MainActivity">
             <intent-filter>

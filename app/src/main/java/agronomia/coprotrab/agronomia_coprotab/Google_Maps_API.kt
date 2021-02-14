@@ -46,12 +46,12 @@ class Google_Maps_API : AppCompatActivity(), OnMapReadyCallback {
 
         lista_ubicacionapi = DataAccess_RegistroAgrotecnico_App(this).select_Ubicaciones_API()
 
-        var lat:Double = lista_ubicacionapi!![1].Latitud.toDouble()
-        var long:Double = lista_ubicacionapi!![1].Longitud.toDouble()
+        var lat:Double = lista_ubicacionapi!![0].Latitud.toDouble()
+        var long:Double = lista_ubicacionapi!![0].Longitud.toDouble()
 
 
         val favoritePlace = LatLng(lat,long)
-        map.addMarker(MarkerOptions().position(favoritePlace).title("que perron negro!!"))
+        map.addMarker(MarkerOptions().position(favoritePlace).title(lista_ubicacionapi!![0].FechaHora))
         map.animateCamera(
             CameraUpdateFactory.newLatLngZoom(favoritePlace, 18f),
             4000,

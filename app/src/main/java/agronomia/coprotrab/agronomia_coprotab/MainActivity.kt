@@ -31,14 +31,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         tvInstr = findViewById<TextView>(R.id.tv_Instr)
-        tvZona = findViewById<TextView>(R.id.tv_Zona)
+
 
         var menuitems = ArrayList<MenuItem>()
 
 
         menuitems.add(MenuItem("Sincronización", R.drawable.ic_sync_green))
-        menuitems.add(MenuItem("Registrar Visita", R.drawable.ic_visita_green))
-        menuitems.add(MenuItem("Ver Socios", R.drawable.ic_socios_green))
+        menuitems.add(MenuItem("Localizar Mascota", R.drawable.ic_local))
+
 
 
 
@@ -57,16 +57,12 @@ class MainActivity : AppCompatActivity() {
                 val intentSincronizacion = Intent(this, SincronizacionActivity::class.java)
                 startActivity(intentSincronizacion)
             }
-            if (menuitems.get(position).nombre == "Registrar Visita") {
+            if (menuitems.get(position).nombre == "Localizar Mascota") {
                 val intentSocios = Intent(this, Google_Maps_API::class.java) //tipo pantalla
                 intentSocios.putExtra(TAGACT, "VISITA")
                 startActivity(intentSocios)
             }
-            if (menuitems.get(position).nombre == "Ver Socios") {
-                val intentSocios = Intent(this, SociosActivity::class.java)
-                intentSocios.putExtra(TAGACT, "DETALLE")
-                startActivity(intentSocios)
-            }
+
 
         }
         b_Main_Ingresa.setOnClickListener {
@@ -88,8 +84,6 @@ class MainActivity : AppCompatActivity() {
             tvInstr?.visibility = View.VISIBLE
             tvInstr?.text = "Usuario: ${SharedApp.prefs?.nombre}"
             tvInstr?.visibility = View.VISIBLE
-            tvZona?.text = "Zona: ${SharedApp.prefs?.zona}"
-            tvZona?.visibility = View.VISIBLE
             b_Main_Salir.visibility = View.VISIBLE
             gv_menuprin.visibility = View.VISIBLE
 
