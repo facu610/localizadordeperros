@@ -67,7 +67,7 @@ class SincronizacionActivity : AppCompatActivity() {
                 bSincroComplementarios.visibility = View.VISIBLE
 
                 dialog.dismiss()
-                Toast.makeText(this, "Conexíon a con el Servidor estable.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Conexíon con el servidor estable.", Toast.LENGTH_LONG).show()
             } else {
                 dialog.dismiss()
                 Toast.makeText(this, "Compruebe su conexión a Internet.", Toast.LENGTH_LONG)
